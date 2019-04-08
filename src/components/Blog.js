@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import rp from 'request-promise-native';
 import $ from 'cheerio';
-const url = 'https://cors-anywhere.herokuapp.com/http://azbo400.github.io/Blog';
+const url = 'https://cors-anywhere.herokuapp.com/http://ryanarnouk.github.io/blog';
 
 class Blog extends Component {
   constructor(props) {
