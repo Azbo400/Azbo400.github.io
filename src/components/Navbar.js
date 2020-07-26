@@ -19,23 +19,72 @@ class NavItem extends Component {
 }
 
 class UserNavbar extends Component {  
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      scroll: false
+    }
+  }
+
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+  
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+  
+  handleScroll = (event) => {
+    console.log(window.pageYOffset);
+
+    if(window.pageYOffset <= 50) {
+      this.setState({
+        scroll: false
+      });
+    } else {
+      this.setState({
+        scroll: true
+      });
+    }
+  }
+
   render() {
     return (
-      <Navbar bg="light" variant="light" fixed="top" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">Ryan Arnouk</Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <NavItem element='.about' text='About' />
-              <NavItem element='.projects' text='Projects' />
-              <NavItem element='.skills' text='Skills' />
-              <NavItem element='.blog' text='Blog' />
-              <NavItem element='.contact' text='Contact' />
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <div>
+        {this.state.scroll ? 
+          <Navbar bg="light" variant="light" expand="lg" fixed="top">
+            <Container>
+              <Navbar.Brand href="#home">Ryan Arnouk</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                  <NavItem element='.about' text='About' />
+                  <NavItem element='.projects' text='Projects' />
+                  <NavItem element='.skills' text='Skills' />
+                  <NavItem element='.blog' text='Blog' />
+                  <NavItem element='.contact' text='Contact' />
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>: 
+          <Navbar bg="light" variant="light" expand="lg">
+            <Container>
+              <Navbar.Brand href="#home">Ryan Arnouk</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                  <NavItem element='.about' text='About' />
+                  <NavItem element='.projects' text='Projects' />
+                  <NavItem element='.skills' text='Skills' />
+                  <NavItem element='.blog' text='Blog' />
+                  <NavItem element='.contact' text='Contact' />
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+        </Navbar>
+        }
+      </div>
     );
   }
 }

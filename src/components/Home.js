@@ -8,11 +8,13 @@ import SocialMediaIcons from './SocialMediaIcons';
 import Contact from './Contact';
 import VerticalSocialMediaIcons from './VerticalSocialMediaIcons';
 import MediaQuery from 'react-responsive';
+import Announcement from './Announcement';
 
 class Home extends Component {
   render() { 
     return (  
       <div>
+        <Announcement />
         <UserNavbar />
         <div className="landing-page">
           <div className="landing-page-text">
@@ -31,7 +33,7 @@ class Home extends Component {
         <div className="about">
           <h3 style={{fontSize: 18, color: 'grey', margin: 0}}>ABOUT ME</h3>
           <h1 style={{marginBottom: 13, fontSize: 25}}>Hi, I'm Ryan.</h1>
-          <p style={{fontSize: 18}}>I am a 15 year old high school student who is passionate about computer programming. Specializing in web development and JavaScript, I have been developing applications and websites for 4 years. While not working on web development, I enjoy mobile app development with React Native, programming with Python, and machine learning. <br /><br /> Currently, I am working on my web app <a href="https://discover-machinelearning.com">Discover Machine Learning</a> an app that introduces machine learning to kids in an easy to use build block environment. I am also working on getting better at programming and become proficient in languages such as Java.   
+          <p style={{fontSize: 18}}>I am a high school student who is passionate about computer programming. Specializing in web development and JavaScript, I have been developing applications and websites for about 5 years. While not working on web development, I enjoy mobile app development with React Native, programming with Python, and machine learning.   
           </p>
           <hr />
           <ul style={{listStyleType: 'none', width: '40%  ', padding: 0}}>
@@ -71,15 +73,7 @@ class Home extends Component {
             <li>WordPress</li>
             <li>React Native</li>
             <li>Redux</li>
-          </ul>
-          <h1 style={{marginBottom: 13, fontSize: 25}}>Future 2019 Ventures</h1>
-          <ul>
-            <li>More Java and C# development</li>
-            <li>More server-side development</li>
-            <li>Learn more low level development with languages such as C++ and C</li>
-            <li>Develop 3 more apps</li>
-            <li>Get better at machine learning with Tensorflow and Python</li>
-            <li>Blockchain</li>
+            <li>Java</li>
           </ul>
         </div>
         <div className="blog">

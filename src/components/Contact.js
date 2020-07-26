@@ -25,10 +25,10 @@ class Contact extends Component {
         sendButton.disabled=true;
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
-            if (request.readyState == 4 && request.status == 200) {
+            if (request.readyState === 4 && request.status === 200) {
                 js_onSuccess();
             } else
-            if(request.readyState == 4) {
+            if(request.readyState === 4) {
                 js_onError(request.response);
             }
         };
